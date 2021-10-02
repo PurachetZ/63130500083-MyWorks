@@ -5,3 +5,6 @@ let n =Number( 'y') - 1; // n == NaN; string "y" can't convert to a number
 console.log(String(1) + ' objects');
 console.log(Number('5') * Number('4'));
 console.log(n);
+
+// มีแค่ + เท่านั้นที่ใช้กับ String ได้
+// String ครอบอะไรที่ไม่ใช่ number ได้ NaN
