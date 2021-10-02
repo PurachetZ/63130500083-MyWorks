@@ -17,18 +17,15 @@ function menu(choose){
         case 2:
             text = "Find Minimum Value"
             result = 100
-            for(let i=0; i < 3; i++){
-                if(number[i] < result){
-                    result = number[i];
-                }
+            for(let num of number){
+                if(num < result) result = num;
             }
+
             break;
         case 3:
             text = "Find Maximum Value"
-            for(let i=0; i < 3; i++){
-                if(number[i] > result){
-                    result = number[i];
-                }
+            for(let num of number){
+                if(num > result) result = num;
             }
             break;
     }
