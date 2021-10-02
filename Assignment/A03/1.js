@@ -44,8 +44,11 @@ function Cal(price, received){
         change -= 1;
     }
     for(let i = 0; i<x.length; i++){
-        y += `${x[i]}\n`
+        y += `${x[i]} \n`
     }
     return `received: ${received} price: ${price} \n${y}`;
 }
 console.log(Cal(49,1000));
+console.log("---------------\n");
+console.log(Cal(63,100));
+console.log("---------------\n");
