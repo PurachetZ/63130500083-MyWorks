@@ -16,3 +16,6 @@ console.log("1" == []);
 console.log("1" == 1);
 console.log(1 == null);
 console.log("1" == undefined);
+console.log("---------------------");
+console.log(null == 0);
+console.log(Number(null) == 0);
