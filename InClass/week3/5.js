@@ -1,0 +1,10 @@
+console.log("---------------------");
+console.log(1 === true);
+console.log(1 === Number(true));
+console.log("---------------------");
+console.log("0" === 0);
+console.log("0" === String(0));
+console.log("---------------------");
+console.log("2" - 1 === 1);
+console.log(String("2" - 1) === "1");
+console.log("---------------------");
