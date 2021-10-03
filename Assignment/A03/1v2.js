@@ -14,6 +14,7 @@ function changeCalculator(order, pay) {
     for(let bc of billCoin){
         changeResult[Object.keys(bc)] = Math.floor(change / bc[Object.keys(bc)]);
         change %= (bc[Object.keys(bc)]); 
+        %= (bc[Object.keys(bc)])
     }
     return changeResult;
   }
