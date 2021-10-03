@@ -1,14 +1,15 @@
 function rng(){
     return Math.floor(Math.random() * 100)+1;
 }
-
+let number = [];
+for(let i = 0; i < 3; i++){
+    number[i] = rng();
+}
 function menu(choose){
-    let number = [];
+
     let result = 0;
     let text = ""
-    for(let i = 0; i < 3; i++){
-        number[i] = rng();
-    }
+
     switch(choose){
         case 1:
             text = "Find Sum";
