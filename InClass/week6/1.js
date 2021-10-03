@@ -21,3 +21,7 @@ console.log(arr1);
 console.log(arr2);
 console.log(arr1 === arr2);
 
+
+x1 = {id:1}
+x1 = null
+console.log(x1 === null);
