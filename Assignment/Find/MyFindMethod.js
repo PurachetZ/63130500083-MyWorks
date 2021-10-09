@@ -27,6 +27,7 @@ console.log(found1)
 console.log(found2)
 console.log(found3)
 
+
 // const foundtest1 = num.find((element, index, arr) => {
 //     if(index >0){
 //         console.log(`element: ${element} index: ${index} arr: ${arr}`)
