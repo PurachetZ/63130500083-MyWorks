@@ -144,7 +144,7 @@ function genProductList(gender = 'U'){
             pProductBuyEle.setAttribute('type', 'button');
             pProductBuyEle.setAttribute('class', 'btn btn-primary');
             pProductBuyEle.textContent = 'Buy Now';
-            pProductBuyEle.onclick = function() {addToCard(product)}
+            pProductBuyEle.onclick = function() {addToCart(product)}
             divProductEle.appendChild(pProductBuyEle);
           
             divProductsEle.appendChild(divProductEle);
@@ -165,10 +165,14 @@ function removeProductList(){
 
 let cart = [];
 
-function addToCard(product){
+function addToCart(product){
+    const indexId = (element) => element == product;
+    console.log(products.findIndex(indexId))
     cart.push({
         productId: product.productId,
         productName: product.productName,
         productPrice: product.productPrice,
+        amount: 1
     })
 }
+
