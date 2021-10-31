@@ -46,5 +46,41 @@ export let products = [
     productPrice: "1,900",
     productStock: 0,
     productGender: "F"
-  }
+  },
+  {
+    img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/14c94550-ca1f-4de6-90cf-e7a1e2e49df0/%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%9C%E0%B8%B9%E0%B9%89-air-jordan-1-mid-se-hHltxp.png",
+    productId: "S007",
+    productName: "Air Jordan 1 Mid SE",
+    productPrice: "4,600",
+    productStock: 3,
+    productGender: "M"
+  },
+  {
+    img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ad53194c-947e-4d94-973a-43bca241f2a1/%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%9C%E0%B8%B9%E0%B9%89-dunk-high-up-kMksLT.png",
+    productId: "S008",
+    productName: "Nike Dunk High Up",
+    productPrice: "4,600",
+    productStock: 0,
+    productGender: "F"
+  },
+  {
+    img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/00b457c8-e740-4150-b18c-8c163cc0d350/%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%A3%E0%B8%A5%E0%B8%9C%E0%B8%B9%E0%B9%89-air-zoom-terra-kiger-7-nm2pqh.png",
+    productId: "S009",
+    productName: "Nike Air Zoom Terra Kiger 7",
+    productPrice: "5,200",
+    productStock: 0,
+    productGender: "F"
+  },
+  // {
+  //   img: "",
+  //   productId: "S0010",
+  //   productName: "Nike Court Legacy",
+  //   productPrice: "1,900",
+  //   productStock: 0,
+  //   productGender: "F"
+  // },
+
+  
+
+
 ];
