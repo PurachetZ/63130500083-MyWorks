@@ -31,7 +31,7 @@ function genProductList(gender = 'U'){
             divProductEle.setAttribute('id', product.productId);
             divProductEle.setAttribute('class', 'col-4 card border-0 mb-4 mx-2 p-0');
             divProductEle.setAttribute('style', 'cursor: pointer; width: 25em;')
-          
+
             const pProductImgEle = document.createElement('img');
             pProductImgEle.setAttribute('src', product.img);
             pProductImgEle.setAttribute('class', 'card-img-top');
@@ -40,7 +40,8 @@ function genProductList(gender = 'U'){
             const pProductIdEle = document.createElement('h5');
             pProductIdEle.textContent = product.productId;
             pProductIdEle.setAttribute('class', 'card-title text-center');
-            pProductIdEle.setAttribute('style', 'margin: -40px 0px 30px;');
+            // pProductIdEle.setAttribute('style', 'margin: -40px 0px 30px;');
+            pProductIdEle.setAttribute('style', 'margin: -380px 0px 370px;');
             divProductEle.appendChild(pProductIdEle);
           
             const pProductNameEle = document.createElement('h5');
