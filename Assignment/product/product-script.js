@@ -5,11 +5,6 @@ divProductsEle.setAttribute('class', 'container row mx-auto')
 
 products.forEach(product => {
     const divProductEle = document.createElement('div');
-    
-    
-    
-    
-    
     divProductEle.setAttribute('id', product.productId);
     divProductEle.setAttribute('class', 'col-4 card border-0 mb-4 mx-2 p-0');
     divProductEle.setAttribute('style', 'cursor: pointer; width: 25em;')
