@@ -3,6 +3,87 @@ const divProductsEle = document.querySelector('#products');
 divProductsEle.setAttribute('class', 'container row mx-auto')
 // divProductsEle.setAttribute('class', 'container row justify-content-center mx-auto');
 
+
+// shoeName.addEventListener('input', function(){
+//     console.log(shoeName.value)
+//     // removeProductList()
+//     // createProductByName(shoeName.value);
+// })
+
+
+
+
+
+{/* <h2 style="text-align: center"><i class="fa fa-shopping-cart"></i> */}
+const bodyEle = document.querySelector('body')
+// const firstBodyEle = bodyEle.firstElementChild;
+
+// {
+//     const divSearchEle = document.createElement('div');
+//     divSearchEle.setAttribute('id', 'searchPanel');
+//     divSearchEle.setAttribute('class', 'p-2');
+//     divSearchEle.setAttribute('style', `border: 1px solid red; `)
+
+
+//     const sIconEle = document.createElement('i');
+//     sIconEle.setAttribute('class', 'fa fa-search p-1');
+//     // sIconEle.setAttribute('style', 'margin-left: 20px')
+//     sIconEle.setAttribute('style', `border: 1px solid red; cursor: pointer;`);
+//     sIconEle.onclick = function() {SearchIconBtn()};
+//     divSearchEle.appendChild(sIconEle);
+
+//     {/* <input type="text" id="fname" name="fname" value="John"> */}
+//     const sFormEle = document.createElement('input');
+//     sFormEle.setAttribute('class', '');
+//     sFormEle.setAttribute('type', 'text');
+//     sFormEle.setAttribute('id', '');
+//     sFormEle.setAttribute('name', '');
+//     sFormEle.setAttribute('value', '');
+//     // sFormEle.setAttribute('style', `visibility: hidden;`);
+//     divSearchEle.appendChild(sFormEle);
+//     const sButtonEle = document.createElement('button');
+//     sButtonEle.setAttribute('class', ' btn btn-primary');
+//     // sButtonEle.setAttribute('style', `margin: 0px 0px 0px 10px;`)
+//     sButtonEle.textContent = 'Search';
+//     // sButtonEle.setAttribute('style', `visibility: hidden;`);
+
+//     divSearchEle.appendChild(sButtonEle);
+
+//     bodyEle.insertBefore(divSearchEle, bodyEle.firstChild);
+
+
+
+//     // const firstBodyEle = bodyEle.firstElementChild;
+//     //     bodyEle.insertBefore(cartMenu, firstBodyEle);
+//     //     bodyEle.removeChild(document.querySelector('#showCart'))
+
+// function SearchIconBtn(){
+//     if(sFormEle.style.visibility == 'hidden'){
+//         sFormEle.style.visibility = 'visible';
+//         sButtonEle.style.visibility = 'visible';
+//     }
+//     else{
+//         sFormEle.style.visibility = 'hidden';
+//         sButtonEle.style.visibility = 'hidden';
+//     }
+// }
+
+
+// }
+
+function removeProductList(){
+    let size = divProductsEle.childNodes.length;
+    for(let i = 0; i < size; i++){
+      divProductsEle.removeChild(divProductsEle.childNodes[0]);
+    }
+    // for(let product of divProductsEle.childNodes){
+    //     console.log(product)
+    //     divProductsEle.removeChild(product);
+    // }
+}
+
+
+
 products.forEach(product => {
     const divProductEle = document.createElement('div');
     divProductEle.setAttribute('id', product.productId);
@@ -46,3 +127,4 @@ products.forEach(product => {
     divProductsEle.appendChild(divProductEle);
 }
 );
+
