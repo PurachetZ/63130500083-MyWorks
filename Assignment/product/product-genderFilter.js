@@ -1,53 +1,50 @@
 import { products } from './product.js';
 const divProductsEle = document.querySelector('#products');
 
-const divSearchEle = document.querySelector('#search');
-divSearchEle.setAttribute('class', 'container row my-5 mx-auto');
-
-const sIconEle = document.createElement('i');
-sIconEle.setAttribute('class', 'col-auto fa fa-search fa-lg');
-sIconEle.setAttribute('style', `padding-top: 10px;`);
-sIconEle.onclick = function() {
-if(sFormEle.style.visibility == 'hidden'){
-    sFormEle.style.visibility = 'visible';
-    sButtonEle.style.visibility = 'visible';
-}
-else{
-    sFormEle.style.visibility = 'hidden';
-    sButtonEle.style.visibility = 'hidden';
-}};
-divSearchEle.appendChild(sIconEle);
-
-const sFormEle = document.createElement('input');
-sFormEle.setAttribute('id', 'shoeName');
-sFormEle.setAttribute('class', 'col-auto form-control w-25');
-sFormEle.setAttribute('type', 'text');
-sFormEle.setAttribute('name', '');
-sFormEle.setAttribute('value', '');
-sFormEle.style.visibility = 'hidden';
-divSearchEle.appendChild(sFormEle);
-
-const sdivSpacingEle = document.createElement('div');
-sdivSpacingEle.setAttribute('class', 'col-auto');
-divSearchEle.appendChild(sdivSpacingEle);
-
-const sButtonEle = document.createElement('button');
-sButtonEle.setAttribute('id', 'searchBtn');
-sButtonEle.setAttribute('class', 'col-auto btn btn-primary ml-2');
-sButtonEle.textContent = 'Search';
-sButtonEle.style.visibility = 'hidden';
-divSearchEle.appendChild(sButtonEle);
-
-const shoeName = document.getElementById('shoeName')
-const searchBtn = document.getElementById('searchBtn')
-searchBtn.onclick = function() {
+const divGenderFilterBar = document.querySelector('#gender-bar');
+const allShoeBtnEle = document.createElement('button');
+allShoeBtnEle.setAttribute('id', 'toAllShoe');
+allShoeBtnEle.setAttribute('class', 'btn btn-secondary mx-1');
+allShoeBtnEle.textContent = 'All Shoes';
+allShoeBtnEle.onclick = function() {
     removeProductList(); 
-    createProductByName(shoeName.value);
+    genProductList(); 
+    changeColorButton(this);
+}
+divGenderFilterBar.appendChild(allShoeBtnEle);
+
+const menShoeBtnEle = document.createElement('button');
+menShoeBtnEle.setAttribute('id', 'toMenShoe');
+menShoeBtnEle.setAttribute('class', 'btn btn-primary mx-1');
+menShoeBtnEle.textContent = `Men's Shoes`;
+menShoeBtnEle.onclick = function() {
+    removeProductList(); 
+    genProductList('M'); 
+    changeColorButton(this);
+}
+divGenderFilterBar.appendChild(menShoeBtnEle);
+
+const womenShoeBtnEle = document.createElement('button');
+womenShoeBtnEle.setAttribute('id', 'toWomenShoe');
+womenShoeBtnEle.setAttribute('class', 'btn btn-primary mx-1');
+womenShoeBtnEle.textContent = `Women's Shoes`;
+womenShoeBtnEle.onclick = function() {
+    removeProductList(); 
+    genProductList('F'); 
+    changeColorButton(this);
+}
+divGenderFilterBar.appendChild(womenShoeBtnEle);
+
+function changeColorButton(currentBtn){
+    divGenderFilterBar.childNodes.forEach(button => {
+        (currentBtn === button ? 
+            button.setAttribute('class', 'btn btn-secondary mx-1') : button.setAttribute('class', 'btn btn-primary mx-1'));
+        if(currentBtn === button);
+    })
 }
 
-
-let createProductByName = (search) => products.forEach(product => {
-    if(product.productName.toLowerCase().match(search.toLowerCase())){
+let genProductList = (gender = 'U') => products.forEach(product =>{
+    if(gender == product.productGender || gender === 'U'){
         const divProductEle = document.createElement('div');
         divProductEle.setAttribute('id', product.productId);
         divProductEle.setAttribute('class', 'col-4 card border-0 mb-4 mx-2 p-0');
@@ -94,24 +91,9 @@ let createProductByName = (search) => products.forEach(product => {
 })
 
 
-// function matchName(pName = '', sName= ''){
-//     return pName.toLowerCase().match(sName.toLowerCase());
-// }
-
 let removeProductList = () => {
     let size = divProductsEle.childNodes.length;
     for(let i = 0; i < size; i++){
         divProductsEle.removeChild(divProductsEle.childNodes[0]);
     }
 }
-
-// function removeProductList(){
-//     let size = divProductsEle.childNodes.length;
-//     for(let i = 0; i < size; i++){
-//       divProductsEle.removeChild(divProductsEle.childNodes[0]);
-//     }
-//     // for(let product of divProductsEle.childNodes){
-//     //     console.log(product)
-//     //     divProductsEle.removeChild(product);
-//     // }
-// }

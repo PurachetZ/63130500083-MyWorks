@@ -8,7 +8,7 @@ divProductsEle.setAttribute('class', 'container row mx-auto')
 function removeProductList(){
     let size = divProductsEle.childNodes.length;
     for(let i = 0; i < size; i++){
-      divProductsEle.removeChild(divProductsEle.childNodes[0]);
+        divProductsEle.removeChild(divProductsEle.childNodes[0]);
     }
     // for(let product of divProductsEle.childNodes){
     //     console.log(product)
@@ -51,12 +51,14 @@ products.forEach(product => {
     pProductStockEle.setAttribute('class', 'card-text text-secondary');
     divProductEle.appendChild(pProductStockEle);
     
-    // const pProductBuyEle = document.createElement('button');
-    // pProductBuyEle.setAttribute('type', 'button');
-    // pProductBuyEle.setAttribute('class', 'btn btn-primary');
-    // pProductBuyEle.textContent = 'Buy Now';
-    // pProductBuyEle.onclick = function() {}
-    // divProductEle.appendChild(pProductBuyEle);
+    const pProductBuyEle = document.createElement('button');
+    pProductBuyEle.setAttribute('id', 'buyBtn' + product.productId);
+    pProductBuyEle.setAttribute('type', 'button');
+    pProductBuyEle.setAttribute('class', 'btn btn-primary');
+    pProductBuyEle.textContent = 'Buy Now';
+    pProductBuyEle.onclick = function() {}
+    // pProductBuyEle.addEventListener("click", addCart);
+    divProductEle.appendChild(pProductBuyEle);
     
     divProductsEle.appendChild(divProductEle);
 }
