@@ -1,13 +1,53 @@
 import { products } from './product.js';
 const divProductsEle = document.querySelector('#products');
 
+const divSearchEle = document.querySelector('#search');
+divSearchEle.setAttribute('class', 'container row mt-5 mx-auto');
+
+const sIconEle = document.createElement('i');
+sIconEle.setAttribute('class', 'col-auto fa fa-search fa-lg');
+sIconEle.setAttribute('style', `padding-top: 10px;`);
+sIconEle.onclick = function() {SearchIconBtn()};
+divSearchEle.appendChild(sIconEle);
+
+const sFormEle = document.createElement('input');
+sFormEle.setAttribute('id', 'shoeName');
+sFormEle.setAttribute('class', 'col-auto form-control w-25');
+sFormEle.setAttribute('type', 'text');
+sFormEle.setAttribute('name', '');
+sFormEle.setAttribute('value', '');
+divSearchEle.appendChild(sFormEle);
+
+const sdivSpacingEle = document.createElement('div');
+sdivSpacingEle.setAttribute('class', 'col-auto');
+divSearchEle.appendChild(sdivSpacingEle);
+
+const sButtonEle = document.createElement('button');
+sButtonEle.setAttribute('id', 'searchBtn');
+sButtonEle.setAttribute('class', 'col-auto btn btn-primary ml-2');
+sButtonEle.textContent = 'Search';
+divSearchEle.appendChild(sButtonEle);
+
 const shoeName = document.getElementById('shoeName')
 const searchBtn = document.getElementById('searchBtn')
 searchBtn.onclick = function() {
     removeProductList(); 
     createProductByName(shoeName.value);
-    
 }
+
+function SearchIconBtn(){
+    if(sFormEle.style.visibility == 'hidden'){
+        sFormEle.style.visibility = 'visible';
+        sButtonEle.style.visibility = 'visible';
+    }
+    else{
+        sFormEle.style.visibility = 'hidden';
+        sButtonEle.style.visibility = 'hidden';
+    }
+}
+
+
+
 
 function createProductByName(search){
     for (let product of products) {
