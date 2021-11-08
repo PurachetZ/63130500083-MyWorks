@@ -1,12 +1,13 @@
 import { products } from './product.js';
+import {addCart,removeCart,countCart} from './cart.js';
 const divProductsEle = document.querySelector('#products');
 
 const divSearchEle = document.querySelector('#search');
-divSearchEle.setAttribute('class', 'container row my-5 mx-auto');
+divSearchEle.setAttribute('class', 'container row my-2 mx-auto');
 
 const sIconEle = document.createElement('i');
 sIconEle.setAttribute('class', 'col-auto fa fa-search fa-lg');
-sIconEle.setAttribute('style', `padding-top: 10px;`);
+sIconEle.setAttribute('style', `padding-top: 10px; cursor: pointer;`);
 sIconEle.onclick = function() {
 if(sFormEle.style.visibility == 'hidden'){
     sFormEle.style.visibility = 'visible';
@@ -36,14 +37,11 @@ sButtonEle.setAttribute('id', 'searchBtn');
 sButtonEle.setAttribute('class', 'col-auto btn btn-primary ml-2');
 sButtonEle.textContent = 'Search';
 sButtonEle.style.visibility = 'hidden';
-divSearchEle.appendChild(sButtonEle);
-
-const shoeName = document.getElementById('shoeName')
-const searchBtn = document.getElementById('searchBtn')
-searchBtn.onclick = function() {
+sButtonEle.addEventListener('click', function() {
     removeProductList(); 
     createProductByName(shoeName.value);
-}
+})
+divSearchEle.appendChild(sButtonEle);
 
 
 let createProductByName = (search) => products.forEach(product => {
@@ -81,12 +79,11 @@ let createProductByName = (search) => products.forEach(product => {
         divProductEle.appendChild(pProductStockEle);
       
         const pProductBuyEle = document.createElement('button');
-        pProductBuyEle.setAttribute('id', 'buyBtn' + product.productId);
+        pProductBuyEle.setAttribute('id', product.productId);
         pProductBuyEle.setAttribute('type', 'button');
         pProductBuyEle.setAttribute('class', 'btn btn-primary');
         pProductBuyEle.textContent = 'Buy Now';
-        pProductBuyEle.onclick = function() {}
-        // pProductBuyEle.addEventListener("click", addCart);
+        pProductBuyEle.addEventListener("click", addCart);
         divProductEle.appendChild(pProductBuyEle);
       
         divProductsEle.appendChild(divProductEle);

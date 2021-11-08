@@ -1,22 +1,8 @@
-import { products } from './product.js';
+import {products} from './product.js';
+import {addCart,removeCart,countCart} from './cart.js';
 const divProductsEle = document.querySelector('#products');
-divProductsEle.setAttribute('class', 'container row mx-auto')
+divProductsEle.setAttribute('class', 'container row mx-auto border border-danger')
 // divProductsEle.setAttribute('class', 'container row justify-content-center mx-auto');
-
-
-
-function removeProductList(){
-    let size = divProductsEle.childNodes.length;
-    for(let i = 0; i < size; i++){
-        divProductsEle.removeChild(divProductsEle.childNodes[0]);
-    }
-    // for(let product of divProductsEle.childNodes){
-    //     console.log(product)
-    //     divProductsEle.removeChild(product);
-    // }
-}
-
-
 
 products.forEach(product => {
     const divProductEle = document.createElement('div');
@@ -52,12 +38,15 @@ products.forEach(product => {
     divProductEle.appendChild(pProductStockEle);
     
     const pProductBuyEle = document.createElement('button');
-    pProductBuyEle.setAttribute('id', 'buyBtn' + product.productId);
+    pProductBuyEle.setAttribute('id', product.productId);
     pProductBuyEle.setAttribute('type', 'button');
     pProductBuyEle.setAttribute('class', 'btn btn-primary');
     pProductBuyEle.textContent = 'Buy Now';
-    pProductBuyEle.onclick = function() {}
-    // pProductBuyEle.addEventListener("click", addCart);
+    pProductBuyEle.addEventListener('click', function(event) {
+        addCart(event);
+        
+        console.log(countCartEle.textContent)
+    });
     divProductEle.appendChild(pProductBuyEle);
     
     divProductsEle.appendChild(divProductEle);
