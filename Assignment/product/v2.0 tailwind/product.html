@@ -1,0 +1,309 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <title>Shoes</title>
+        <style>
+            *{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            /* nav * {
+              border: 1px red solid;
+            } */
+            /* nav {
+              border: 1px red solid;
+            } */
+            /* #test *{
+              border: 1px red solid;
+            } */
+        </style>
+    </head>
+
+    <body>
+      <div class="py-14"></div>
+      <div class="fixed top-0 inset-x-0 opacity-100">
+        <div class="bg-gray-50">
+          <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between">
+              <div class="flex items-center">
+                <p class="py-2 pr-2 text-gray-500 font-medium text-sm">background color</p>
+                <select id="bg-color-select" class="rounded-lg px-1 border">
+                  <option value="white">White</option>
+                  <option value="lightgrey">Gray</option>
+                  <option value="powderblue">Blue</option>
+                  <option value="lightpink">Pink</option>
+                  <option value="yellowgreen">Green</option>
+                  <option value="lightsalmon">Orange</option>
+                </select>
+                <p id="last-time-login"  class="py-2 px-2 text-gray-500 font-medium text-sm"></p>
+              </div>
+              <div class="flex">
+                
+              </div>
+              <div class="flex">
+                <!-- justify-end -->
+                <p hidden id="welcome" class="py-2 pr-2 text-gray-500 font-medium text-sm">Welcome</p>
+                <p hidden id="user-name" class="py-2 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer">Tester</p>
+                <p hidden id="sign-out" class="py-2 pr-1 pl-2 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer">|&nbsp; Sign Out</p>
+                <p id="sign-in" class="py-2 pr-1 pl-2 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer">Sign In</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+  
+        <nav class="bg-gray-100">
+          <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between">
+  
+              <div class="flex space-x-4">
+                <!-- * logo -->
+                <div>
+                  <div class="flex items-center py-3 px-2">
+                    <img class="h-10 w-10 mr-2" src="img/icon-home.png">
+                    <span class="font-bold text-lg">Nike Shop</span>
+                  </div>
+                </div>
+  
+                <!-- * primary nav -->
+                <div id="select-type" class="flex items-center space-x-1">
+                  <a href="#" id="select-all-products" class="px-2 text-gray-700 hover:text-gray-900 font-semibold">All Products</a>
+                  <a href="#" id="select-shoes" class="px-2 text-gray-700 hover:text-gray-900 font-semibold">Shoes</a>
+                  <a href="#" id="select-clothing" class="px-2 text-gray-700 hover:text-gray-900 font-semibold">Clothing</a>
+                </div>
+              </div>
+              
+              <div class="flex">
+                <div class="flex items-center space-x-2">
+                  <label class="inline-flex items-center">
+                    <input id="select-men" value="M" type="checkbox" class="form-checkbox h-4 w-4" checked>
+                    <span class="ml-2">Men</span>
+                  </label>
+                  <label class="inline-flex items-center">
+                    <input id="select-women" value="F" type="checkbox" class="form-checkbox h-4 w-4" checked>
+                    <span class="ml-2">Women</span>
+                  </label>
+                </div>
+                
+              </div>
+  
+              <!-- * secondary nav -->
+              <div class="flex space-x-7">
+                <!-- <a href="#" class="px-2 text-gray-700 hover:text-gray-900 font-semibold">Login</a>
+                <a href="#" class="px-2 text-gray-700 hover:text-gray-900 font-semibold">Signup</a> -->
+  
+                <!-- * search -->
+                <!-- ประวัติค้นหา -->
+                <div class="flex items-center space-x-2">
+                  <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  <input hidden id="shoeName" class="w-72 h-10 px-3 text-gray-700 border-2 border-primary rounded-md focus:shadow-outline" 
+                    type="text" placeholder="Search..." />
+                  <button hidden id="searchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                    Search
+                  </button>
+                </div>
+                
+                <!-- cart status + del cart -->
+                <div class="flex items-center">
+                  <svg id="show-cart" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <p class="pl-2 text-gray-700 hover:text-gray-900 font-semibold">cart: </p>
+                  <span id="cart-count" class="pl-1 pr-2 text-gray-700 hover:text-gray-900 font-semibold">0</span>
+                  <svg id="delete-cart" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </div>
+                
+              </div>
+  
+            </div>
+          </div>
+          <!-- * mobile menu -->
+          
+        </nav>
+      </div>
+<!--       
+      <div class="bg-red-100 h-5/6 w-2/6 w-28 fixed right-0 inset-y-24">
+        <div class="px-5 py-5 font-semibold text-lg">
+          <p class="">Cart</p>
+        </div>
+        <div id="products-in-cart"></div>
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-3 py-3">
+              </th>
+              <th scope="col" class="px-3 py-3 text-left">Id</th>
+              <th scope="col" class="px-3 py-3 text-left">Name</th>
+              <th scope="col" class="px-3 py-3 text-left">Price</th>
+              <th scope="col" class="px-3 py-3 text-left">Qty</th>
+              <th scope="col" class="px-3 py-3">
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <img class="h-8 w-8 rounded-full" src="img/icon-home.png" alt="">
+              </td>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                S001
+              </td>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                Nike Air Force 1 '07
+              </td>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                3,500
+              </td>
+              <td class="space-x-1 py-4 whitespace-nowrap text-sm text-gray-500 ">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M20 12H4" />
+                  </svg>
+                  2
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 4v16m8-8H4" />
+                  </svg>  
+                </div>
+              </td>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Name
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Title
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Role
+              </th>
+              <th scope="col" class="relative px-6 py-3">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 h-10 w-10">
+                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                  </div>
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                      Jane Cooper
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      jane.cooper@example.com
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Regional Paradigm Technician</div>
+                <div class="text-sm text-gray-500">Optimization</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                Admin
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div> -->
+
+      <div hidden id="show-cart-div" class="bg-red-100 h-5/6 w-2/6 w-28 fixed right-0 inset-y-24">
+        <!-- <div class="px-5 py-5 font-semibold text-lg">
+          <p class="">Cart</p>
+        </div> -->
+        <!-- <div id="products-in-cart"></div> -->
+        <!-- "min-w-full divide-y divide-gray-200" -->
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-3 py-3">
+              </th>
+              <th scope="col" class="px-3 py-3 text-left">Id</th>
+              <th scope="col" class="px-3 py-3 text-left">Name</th>
+              <th scope="col" class="px-3 py-3 text-left">Price</th>
+              <th scope="col" class="px-3 py-3 text-left">Qty</th>
+              <th scope="col" class="px-3 py-3">
+              </th>
+            </tr>
+          </thead>
+          <tbody id="products-in-cart" class="bg-white divide-y divide-gray-200">
+            <tr>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <img class="h-8 w-8 rounded-full" src="img/icon-home.png" alt="">
+              </td>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                S001
+              </td>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                Nike Air Force 1 '07
+              </td>
+              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                3,500
+              </td>
+              <td class="space-x-1 py-4 whitespace-nowrap text-sm text-gray-500 ">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M20 12H4" />
+                  </svg>
+                  <div>2</div>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 4v16m8-8H4" />
+                  </svg>  
+                </div>
+              </td>
+              <td>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <div id="products"></div>
+        
+        <script src="product-script.js" type="module"></script>
+        <script src="product-search.js" type="module"></script>
+        <script src="cookie-script.js" type="module"></script>
+        <script src="login.js" type="module"></script>
+        <script src="bg-color-select.js" type="module"></script>
+        <script src="last-time.js" type="module"></script>
+        <script src="product-select-type.js" type="module"></script>
+        <script src="product-cart.js" type="module"></script>
+        <!-- <script src="product-genderFilter.js" type="module"></script> -->
+        <script src="product-gender.js" type="module"></script>
+    </body>
+</html>

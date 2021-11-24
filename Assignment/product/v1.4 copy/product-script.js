@@ -40,7 +40,6 @@ products.forEach(product => {
     const pProductBuyEle = document.createElement('button');
     pProductBuyEle.setAttribute('type', 'button');
     pProductBuyEle.setAttribute('class', 'btn btn-primary');
-    
     pProductBuyEle.textContent = 'Buy Now';
     pProductBuyEle.addEventListener('click', addCart);
     divProductEle.appendChild(pProductBuyEle);

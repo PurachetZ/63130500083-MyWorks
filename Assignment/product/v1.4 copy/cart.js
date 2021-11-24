@@ -1,6 +1,6 @@
 const countCartEle = document.getElementById('cart-count');
 const deleteCartBtnEle = document.getElementById('delete-cart');
-deleteCartBtnEle.addEventListener('click', removeCart);
+deleteCartBtnEle.addEventListener("click",removeCart);
 export let cart = [];
 
 export function addCart(e){
