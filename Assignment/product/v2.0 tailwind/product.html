@@ -239,60 +239,64 @@
         </table>
       </div> -->
 
-      <div hidden id="show-cart-div" class="bg-red-100 h-5/6 w-2/6 w-28 fixed right-0 inset-y-24">
-        <!-- <div class="px-5 py-5 font-semibold text-lg">
-          <p class="">Cart</p>
-        </div> -->
-        <!-- <div id="products-in-cart"></div> -->
-        <!-- "min-w-full divide-y divide-gray-200" -->
-        <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-50">
-            <tr>
-              <th scope="col" class="px-3 py-3">
-              </th>
-              <th scope="col" class="px-3 py-3 text-left">Id</th>
-              <th scope="col" class="px-3 py-3 text-left">Name</th>
-              <th scope="col" class="px-3 py-3 text-left">Price</th>
-              <th scope="col" class="px-3 py-3 text-left">Qty</th>
-              <th scope="col" class="px-3 py-3">
-              </th>
-            </tr>
-          </thead>
-          <tbody id="products-in-cart" class="bg-white divide-y divide-gray-200">
-            <tr>
-              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                <img class="h-8 w-8 rounded-full" src="img/icon-home.png" alt="">
-              </td>
-              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                S001
-              </td>
-              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                Nike Air Force 1 '07
-              </td>
-              <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                3,500
-              </td>
-              <td class="space-x-1 py-4 whitespace-nowrap text-sm text-gray-500 ">
-                <div class="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M20 12H4" />
+      <div hidden id="show-cart-div">
+        <div class="bg-red-100 h-5/6 w-2/6 w-28 fixed right-0 inset-y-24" style="visibility:hidden">
+          <!-- <div class="px-5 py-5 font-semibold text-lg">
+            <p class="">Cart</p>
+          </div> -->
+          <!-- <div id="products-in-cart"></div> -->
+          <!-- "min-w-full divide-y divide-gray-200" -->
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-3 py-3">
+                </th>
+                <th scope="col" class="px-3 py-3 text-left">Id</th>
+                <th scope="col" class="px-3 py-3 text-left">Name</th>
+                <th scope="col" class="px-3 py-3 text-left">Price</th>
+                <th scope="col" class="px-3 py-3 text-left">Qty</th>
+                <th scope="col" class="px-3 py-3">
+                </th>
+              </tr>
+            </thead>
+            <tbody id="products-in-cart" class="bg-white divide-y divide-gray-200">
+              <tr>
+                <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <img class="h-8 w-8 rounded-full" src="img/icon-home.png" alt="">
+                </td>
+                <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                  S001
+                </td>
+                <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                  Nike Air Force 1 '07
+                </td>
+                <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                  3,500
+                </td>
+                <td class="space-x-1 py-4 whitespace-nowrap text-sm text-gray-500 ">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M20 12H4" />
+                    </svg>
+                    <div>2</div>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 4v16m8-8H4" />
+                    </svg>  
+                  </div>
+                </td>
+                <td>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
-                  <div>2</div>
-                  
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 4v16m8-8H4" />
-                  </svg>  
-                </div>
-              </td>
-              <td>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+      
+      
         <div id="products"></div>
         
         <script src="product-script.js" type="module"></script>
