@@ -1,5 +1,5 @@
 import { products } from './product.js';
-import { createEl, $ } from './utils.js';
+import { createEl, setAttrEle, $ } from './utils.js';
 let Product = {
     products: [],
     init() {
@@ -17,9 +17,16 @@ let Product = {
         inner: 'Desc'
       })
 
+      setAttrEle(testTitle, {
+        style: 'color:red;',
+        inner: 'Title'
+      })
+
       let child = [testTitle, testDesc];
       // testDiv.append(testTitle, testDesc);
       testDiv.append(...child)
+      
+      
     }
 }
 export default Product;
