@@ -28,8 +28,17 @@ export let setAttrEle = (ele, attributes) => {
   }
 }
 
+//ใช้ append แทน
 // export let appendManyChilds = (parent, ...childs) => {
 //   childs.forEach((e) => parent.appendChild(e));
 // }
 
 export let $ = ( id ) => { return document.getElementById( id ); };
+
+export async function fetchData(endpoint) {
+  const response = await fetch(endpoint);
+  const text = await response.text();
+  const newLine = text.split('\n');
+
+  return text;
+}
