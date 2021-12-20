@@ -17,16 +17,16 @@ let Product = {
         inner: 'Desc'
       })
 
-      setAttrEle(testTitle, {
-        style: 'color:red;',
-        inner: 'Title'
-      })
+      
 
       let child = [testTitle, testDesc];
       // testDiv.append(testTitle, testDesc);
       testDiv.append(...child)
       
-      
+      setAttrEle(testTitle, {
+        style: 'color:red;',
+        inner: 'Title'
+      })
     }
 }
 export default Product;
