@@ -1,14 +1,17 @@
-export let createEl = (elName, attributes) => {
-  let el = document.createElement(elName);
+export let createEl = (eleName, attributes) => {
+  let ele = document.createElement(eleName);
   for (const attr in attributes) {
     if (attr == 'inner') {
-      el.innerHTML = attributes[attr];
-    } 
+      ele.innerHTML = attributes[attr];
+    }
+    else if(attr == 'href') {
+      ele.href = attributes[attr];
+    }
     else {
-      el.setAttribute(attr, attributes[attr]);
+      ele.setAttribute(attr, attributes[attr]);
     }
   }
-  return el;
+  return ele;
 }
 
 export let setAttrEle = (ele, attributes) => {
@@ -16,10 +19,13 @@ export let setAttrEle = (ele, attributes) => {
     if(attr == 'inner'){
       ele.innerHTML = attributes[attr];
     }
-    else if(attr == '+Class'){
+    else if(attr == 'href') {
+      ele.href = attributes[attr];
+    }
+    else if(attr == 'classAdd'){
       ele.classList.add(...attributes[attr]);
     }
-    else if(attr == '-Class'){
+    else if(attr == 'classDel'){
       ele.classList.remove(...attributes[attr]);
     }
     else{
